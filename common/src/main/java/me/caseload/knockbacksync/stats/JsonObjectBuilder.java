@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 /**
  * An extremely simple JSON builder.
  *
- * <p>While this class is neither feature-rich nor the most performant one, it's sufficient enough
+ * <p>While this class is neither feature-rich nor the most performant one, it's sufficient
  * for its use-case.
  */
 public class JsonObjectBuilder {

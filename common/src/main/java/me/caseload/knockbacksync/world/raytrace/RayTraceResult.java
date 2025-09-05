@@ -19,5 +19,4 @@ public class RayTraceResult {
         this.hitBlockPosition = hitBlockPosition;
         this.hitBlock = hitBlock;
     }
-
 }

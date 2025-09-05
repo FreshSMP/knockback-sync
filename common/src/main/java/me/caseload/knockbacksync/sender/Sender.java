@@ -33,13 +33,6 @@ public interface Sender {
     String getName();
 
     /**
-     * Gets a string representing the senders username, and their current location
-     * within the network.
-     *
-     * @return a friendly identifier for the sender
-     */
-
-    /**
      * Gets the sender's unique id.
      *
      * <p>See {@link #CONSOLE_UUID} for the console's UUID representation.</p>

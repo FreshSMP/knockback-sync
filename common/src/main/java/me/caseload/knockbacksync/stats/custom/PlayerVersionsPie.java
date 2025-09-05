@@ -3,9 +3,7 @@ package me.caseload.knockbacksync.stats.custom;
 import com.github.retrooper.packetevents.protocol.player.ClientVersion;
 import com.github.retrooper.packetevents.protocol.player.User;
 import me.caseload.knockbacksync.Base;
-import me.caseload.knockbacksync.manager.PlayerDataManager;
 import me.caseload.knockbacksync.player.PlatformPlayer;
-import me.caseload.knockbacksync.player.PlayerData;
 import me.caseload.knockbacksync.stats.AdvancedPie;
 
 import java.util.HashMap;
@@ -19,7 +17,7 @@ public class PlayerVersionsPie extends AdvancedPie {
             Map<String, Integer> valueMap = new HashMap<>();
             for (PlatformPlayer player : Base.INSTANCE.getPlatformServer().getOnlinePlayers()) {
                 User user = player.getUser();
-                if (user == null || user.getClientVersion() == null) {
+                if (user == null) {
                     valueMap.put(ClientVersion.UNKNOWN.toString(), valueMap.getOrDefault(ClientVersion.UNKNOWN.toString(), 0) + 1);
                 } else {
                     valueMap.put(user.getClientVersion().toString(), valueMap.getOrDefault(user.getClientVersion().toString(), 0) + 1);

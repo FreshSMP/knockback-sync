@@ -4,6 +4,7 @@ import me.caseload.knockbacksync.FabricLoaderMod;
 import me.caseload.knockbacksync.player.FabricPlayer;
 import me.caseload.knockbacksync.player.PlatformPlayer;
 import net.minecraft.server.network.ServerPlayerEntity;
+
 import java.util.Collection;
 import java.util.UUID;
 import java.util.stream.Collectors;

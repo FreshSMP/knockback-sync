@@ -1,9 +1,10 @@
 package me.caseload.knockbacksync.util;
 
 import com.mojang.brigadier.context.CommandContext;
-import java.util.function.Supplier;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
+
+import java.util.function.Supplier;
 
 public class CommandUtil {
 

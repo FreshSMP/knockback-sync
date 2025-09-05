@@ -70,14 +70,12 @@ public final class AbstractSender<T> implements Sender {
     @Override
     public boolean isValid() {
         return true;
-//        return isConsole() || this.plugin.getBootstrap().isPlayerOnline(this.uniqueId);
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == this) return true;
-        if (!(o instanceof AbstractSender)) return false;
-        final AbstractSender<?> that = (AbstractSender<?>) o;
+        if (!(o instanceof AbstractSender<?> that)) return false;
         return this.getUniqueId().equals(that.getUniqueId());
     }
 

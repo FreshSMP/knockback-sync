@@ -1,7 +1,6 @@
 package me.caseload.knockbacksync.player;
 
 import com.github.retrooper.packetevents.PacketEvents;
-import com.github.retrooper.packetevents.manager.player.PlayerManager;
 import com.github.retrooper.packetevents.manager.server.ServerVersion;
 import com.github.retrooper.packetevents.netty.channel.ChannelHelper;
 import com.github.retrooper.packetevents.protocol.ConnectionState;
@@ -13,6 +12,7 @@ import com.github.retrooper.packetevents.wrapper.PacketWrapper;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerKeepAlive;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerPing;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerWindowConfirmation;
+import io.netty.channel.Channel;
 import lombok.Getter;
 import lombok.Setter;
 import me.caseload.knockbacksync.Base;
@@ -33,8 +33,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Field;
-import io.netty.channel.Channel;
-import java.util.*;
+import java.util.Queue;
+import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 
@@ -198,7 +199,7 @@ public class PlayerData {
     }
 
     /**
-     * Gets whether or not offGroundSynchronization is enabled for the player.
+     * Gets whether offGroundSynchronization is enabled for the player.
      * @return <code>true</code> if enabled; <code>false</code> otherwise.
      */
     public boolean isOffGroundSyncEnabled() {

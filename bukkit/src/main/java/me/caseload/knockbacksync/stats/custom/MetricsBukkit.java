@@ -16,7 +16,6 @@ package me.caseload.knockbacksync.stats.custom;
  * Violations will result in a ban of your plugin and account from bStats.
  */
 
-import me.caseload.knockbacksync.BukkitLoaderPlugin;
 import me.caseload.knockbacksync.Base;
 import me.caseload.knockbacksync.stats.CustomChart;
 import me.caseload.knockbacksync.stats.JsonObjectBuilder;
@@ -71,11 +70,7 @@ public class MetricsBukkit implements Metrics {
         boolean logErrors = config.getBoolean("logFailedRequests", false);
         boolean logSentData = config.getBoolean("logSentData", false);
         boolean logResponseStatusText = config.getBoolean("logResponseStatusText", false);
-//        boolean isFolia = false;
-//        try {
-//            isFolia = Class.forName("io.papermc.paper.threadedregions.RegionizedServer") != null;
-//        } catch (Exception e) {
-//        }
+
         metricsBase =
                 new // See https://github.com/Bastian/bstats-metrics/pull/126
                         // See https://github.com/Bastian/bstats-metrics/pull/126
@@ -92,9 +87,6 @@ public class MetricsBukkit implements Metrics {
                         this::appendPlatformData,
                         this::appendServiceData,
                         submitDataTask -> Base.INSTANCE.getScheduler().runTask(submitDataTask),
-//                        isFolia
-//                                ? null
-//                                : submitDataTask -> Bukkit.getScheduler().runTask(plugin, submitDataTask),
                         plugin::isEnabled,
                         (message, error) -> this.plugin.getLogger().log(Level.WARNING, message, error),
                         (message) -> this.plugin.getLogger().log(Level.INFO, message),
@@ -152,5 +144,3 @@ public class MetricsBukkit implements Metrics {
         }
     }
 }
-
-

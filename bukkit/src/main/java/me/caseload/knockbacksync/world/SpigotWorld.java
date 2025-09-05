@@ -42,8 +42,6 @@ public class SpigotWorld implements PlatformWorld {
                 movingObjectPositionClass = Class.forName(nmsPackage + ".MovingObjectPosition");
                 enumDirectionClass = Class.forName(nmsPackage + ".EnumDirection");
 
-//                CraftWorld
-
                 // Get method
                 craftWorldGetHandleMethod = craftWorldClass.getMethod("getHandle");
                 rayTraceMethod = Class.forName(nmsPackage + ".World").getMethod("rayTrace", vec3DClass, vec3DClass, boolean.class, boolean.class, boolean.class);

@@ -7,7 +7,6 @@ import net.minecraft.server.MinecraftServer;
 import java.util.*;
 
 public class FabricSchedulerAdapter implements SchedulerAdapter {
-    //    private final MinecraftServer server;
     private final Map<ScheduledTask, Runnable> taskMap = new HashMap<>();
     private final Map<Thread, Runnable> asyncTasks = new HashMap<>();
 

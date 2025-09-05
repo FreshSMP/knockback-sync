@@ -1,11 +1,10 @@
 package me.caseload.knockbacksync.listener.packetevents;
 
-import com.github.retrooper.packetevents.event.*;
+import com.github.retrooper.packetevents.event.PacketListenerAbstract;
+import com.github.retrooper.packetevents.event.PacketListenerPriority;
+import com.github.retrooper.packetevents.event.PacketSendEvent;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.protocol.packettype.PacketTypeCommon;
-import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientKeepAlive;
-import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPong;
-import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientWindowConfirmation;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerKeepAlive;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerPing;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerWindowConfirmation;
@@ -15,7 +14,6 @@ import me.caseload.knockbacksync.player.PingStrategy;
 import me.caseload.knockbacksync.player.PlayerData;
 import me.caseload.knockbacksync.util.data.Pair;
 
-import java.util.Queue;
 import java.util.UUID;
 
 public class PingSendListener extends PacketListenerAbstract {
@@ -40,7 +38,6 @@ public class PingSendListener extends PacketListenerAbstract {
             WrapperPlayServerKeepAlive keepAlive = new WrapperPlayServerKeepAlive(event);
             long id = keepAlive.getId();
 
-//            System.out.println("Adding ping to queue - ID: " + id + " Time: " + System.nanoTime() + " Queue size before: " + playerData.keepaliveMap.size());
             playerData.keepaliveMap.add(new Pair<>(id, System.nanoTime()));
         } else if (playerData.pingStrategy == PingStrategy.TRANSACTION && packetType.equals(PacketType.Play.Server.PING)) {
             WrapperPlayServerPing ping = new WrapperPlayServerPing(event);

@@ -37,23 +37,4 @@ public class ServerEntityMixin {
             }
         }
     }
-
-    // Custom tick intervals
-//    @Shadow
-//    private int updateInterval;
-
-//    @Accessor("entity")
-//    Entity getEntity() {
-//        return null;
-//    }
-
-//    @Invoker("sendChanges")
-//    void invokeSendChanges() {
-//
-//    }
-
-//    @Override
-//    public void setUpdateInterval(int interval) {
-//        this.updateInterval = interval;
-//    }
 }

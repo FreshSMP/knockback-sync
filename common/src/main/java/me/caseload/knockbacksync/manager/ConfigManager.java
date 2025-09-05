@@ -2,8 +2,8 @@ package me.caseload.knockbacksync.manager;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.caseload.knockbacksync.ConfigWrapper;
 import me.caseload.knockbacksync.Base;
+import me.caseload.knockbacksync.ConfigWrapper;
 import me.caseload.knockbacksync.Platform;
 import me.caseload.knockbacksync.config.YamlConfiguration;
 import me.caseload.knockbacksync.runnable.PingRunnable;

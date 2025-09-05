@@ -2,9 +2,10 @@ package me.caseload.knockbacksync.entity;
 
 import me.caseload.knockbacksync.Base;
 import me.caseload.knockbacksync.ConfigWrapper;
+import me.caseload.knockbacksync.event.KBSyncEventHandler;
 import me.caseload.knockbacksync.event.events.ConfigReloadEvent;
 import net.minecraft.entity.EntityType;
-import me.caseload.knockbacksync.event.KBSyncEventHandler;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -20,11 +21,6 @@ public class EntityTickManager {
     public static void updateTickIntervals(ConfigReloadEvent event) {
         ConfigWrapper configWrapper = event.getConfigManager().getConfigWrapper();
         updateTickIntervals(configWrapper);
-
-//        Map<String, Integer> entityIntervals = CustomUpdateIntervals.loadEntityIntervalsFromConfig();
-//        for (ServerLevel level : FabricLoaderMod.getServer().getAllLevels()) {
-//            CustomUpdateIntervals.updateIntervals(level, entityIntervals);
-//        }
     }
 
     private static void updateTickIntervals(ConfigWrapper configWrapper) {

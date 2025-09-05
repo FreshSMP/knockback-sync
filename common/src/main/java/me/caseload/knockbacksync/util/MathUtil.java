@@ -1,9 +1,5 @@
 package me.caseload.knockbacksync.util;
 
-import me.caseload.knockbacksync.player.PlayerData;
-
-import me.caseload.knockbacksync.Base;
-
 public class MathUtil {
 
     private static final double TERMINAL_VELOCITY = 3.92;

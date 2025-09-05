@@ -2,7 +2,6 @@ package me.caseload.knockbacksync.util;
 
 import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.util.reflection.Reflection;
-import me.caseload.knockbacksync.Base;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

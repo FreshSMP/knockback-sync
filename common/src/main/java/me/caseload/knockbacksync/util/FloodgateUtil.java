@@ -26,6 +26,4 @@ public class FloodgateUtil {
             return false;
         }
     }
-
 }
-

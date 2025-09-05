@@ -5,7 +5,6 @@ import me.caseload.knockbacksync.ConfigWrapper;
 import me.caseload.knockbacksync.command.generic.BuilderCommand;
 import me.caseload.knockbacksync.event.KBSyncEventHandler;
 import me.caseload.knockbacksync.event.events.ConfigReloadEvent;
-import me.caseload.knockbacksync.manager.ConfigManager;
 import me.caseload.knockbacksync.sender.Sender;
 import me.caseload.knockbacksync.util.ChatUtil;
 import org.incendo.cloud.CommandManager;

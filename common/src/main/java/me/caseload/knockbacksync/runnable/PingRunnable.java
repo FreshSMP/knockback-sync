@@ -6,8 +6,6 @@ import me.caseload.knockbacksync.manager.CombatManager;
 import me.caseload.knockbacksync.manager.PlayerDataManager;
 import me.caseload.knockbacksync.player.PlayerData;
 
-import java.util.UUID;
-
 public class PingRunnable implements Runnable {
 
     @Override

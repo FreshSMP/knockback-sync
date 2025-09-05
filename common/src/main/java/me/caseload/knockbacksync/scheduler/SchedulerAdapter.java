@@ -1,6 +1,7 @@
 package me.caseload.knockbacksync.scheduler;
 
 public interface SchedulerAdapter {
+
     AbstractTaskHandle runTask(Runnable task);
 
     AbstractTaskHandle runTaskAsynchronously(Runnable task);

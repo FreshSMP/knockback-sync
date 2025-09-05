@@ -2,8 +2,8 @@ package me.caseload.knockbacksync.command.subcommand;
 
 import me.caseload.knockbacksync.Base;
 import me.caseload.knockbacksync.command.generic.BuilderCommand;
-import me.caseload.knockbacksync.event.events.ConfigReloadEvent;
 import me.caseload.knockbacksync.event.KBSyncEventHandler;
+import me.caseload.knockbacksync.event.events.ConfigReloadEvent;
 import me.caseload.knockbacksync.manager.ConfigManager;
 import me.caseload.knockbacksync.sender.Sender;
 import me.caseload.knockbacksync.util.ChatUtil;

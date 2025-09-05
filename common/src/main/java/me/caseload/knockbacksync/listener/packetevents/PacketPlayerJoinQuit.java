@@ -11,15 +11,12 @@ import me.caseload.knockbacksync.player.PlatformPlayer;
 import me.caseload.knockbacksync.player.PlayerData;
 import me.caseload.knockbacksync.util.ChatUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.UUID;
 
 public class PacketPlayerJoinQuit extends PacketListenerAbstract {
     @Override
     public void onUserLogin(UserLoginEvent event) {
         Object nativePlayerObject = event.getPlayer();
-        Preconditions.checkArgument(nativePlayerObject != null);
+        Preconditions.checkArgument(true);
 
         @NotNull PlatformPlayer platformPlayer = Base.INSTANCE.getPlatformServer().getPlayer(nativePlayerObject);
         onPlayerJoin(event.getUser(), platformPlayer);

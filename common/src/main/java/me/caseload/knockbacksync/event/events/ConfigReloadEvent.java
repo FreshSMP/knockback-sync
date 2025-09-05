@@ -11,5 +11,4 @@ public class ConfigReloadEvent extends Event {
     public ConfigReloadEvent(ConfigManager configManager) {
         this.configManager = configManager;
     }
-
 }

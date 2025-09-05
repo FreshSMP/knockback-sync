@@ -1,6 +1,5 @@
 package me.caseload.knockbacksync.listener.fabric;
 
-
 import me.caseload.knockbacksync.listener.PlayerDamageListener;
 import me.caseload.knockbacksync.player.FabricPlayer;
 import me.caseload.knockbacksync.player.PlatformPlayer;

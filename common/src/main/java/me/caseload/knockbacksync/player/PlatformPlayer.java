@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.UUID;
 
 public interface PlatformPlayer {
+
     UUID getUUID();
 
     String getName();

@@ -24,5 +24,4 @@ public class BukkitPlayerSelectorParser<C> extends AbstractPlayerSelectorParser<
     protected CompletableFuture<PlayerSelector> adaptToCommonSelector(CommandContext<C> context, Object platformSpecificSelector) {
         return CompletableFuture.completedFuture(new BukkitPlayerSelectorAdapter((org.incendo.cloud.bukkit.data.SinglePlayerSelector) platformSpecificSelector));
     }
-
 }

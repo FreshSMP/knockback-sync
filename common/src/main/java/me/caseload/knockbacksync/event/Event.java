@@ -1,8 +1,9 @@
 package me.caseload.knockbacksync.event;
 
+import lombok.Getter;
 import lombok.Setter;
-import me.caseload.knockbacksync.event.OptimizedEventBus;
 
+@Getter
 public abstract class Event {
     @Setter
     private static EventBus eventBus;
@@ -15,9 +16,5 @@ public abstract class Event {
         } else {
             throw new IllegalStateException("EventBus has not been set");
         }
-    }
-
-    public boolean isCancelled() {
-        return cancelled;
     }
 }

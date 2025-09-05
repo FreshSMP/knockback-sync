@@ -1,7 +1,6 @@
 package me.caseload.knockbacksync.scheduler;
 
 import io.github.retrooper.packetevents.util.folia.FoliaScheduler;
-import io.github.retrooper.packetevents.util.folia.GlobalRegionScheduler;
 import org.bukkit.plugin.Plugin;
 
 import java.util.concurrent.TimeUnit;

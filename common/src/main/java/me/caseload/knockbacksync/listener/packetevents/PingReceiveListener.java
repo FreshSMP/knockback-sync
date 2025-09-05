@@ -1,6 +1,8 @@
 package me.caseload.knockbacksync.listener.packetevents;
 
-import com.github.retrooper.packetevents.event.*;
+import com.github.retrooper.packetevents.event.PacketListenerAbstract;
+import com.github.retrooper.packetevents.event.PacketListenerPriority;
+import com.github.retrooper.packetevents.event.PacketReceiveEvent;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.protocol.packettype.PacketTypeCommon;
 import com.github.retrooper.packetevents.protocol.player.User;
@@ -14,7 +16,6 @@ import me.caseload.knockbacksync.player.PlayerData;
 import me.caseload.knockbacksync.util.data.Pair;
 
 import java.util.Queue;
-import java.util.UUID;
 
 public class PingReceiveListener extends PacketListenerAbstract {
 
@@ -52,8 +53,6 @@ public class PingReceiveListener extends PacketListenerAbstract {
     }
 
     private <T extends Number> void handlePingCalculationPackets(PacketReceiveEvent event, PlayerData playerData, long id, Queue<Pair<T, Long>> packetSentList) {
-//        System.out.println("Received response ID: " + id + " Queue size before: " + packetSentList.size());
-//        System.out.println("Current queue contents: " + packetSentList.toString());
 
         if (playerData.didWeSendThatPacket(id)) {
             event.setCancelled(true);
@@ -69,11 +68,8 @@ public class PingReceiveListener extends PacketListenerAbstract {
             cleared++;
 
             if (data == null) {
-//                System.out.println("No data found in queue!");
                 break;
             }
-
-//            System.out.println("Cleared entry " + cleared + ": ID=" + data.getFirst() + " Time=" + data.getSecond());
 
             long pingNanos = (System.nanoTime() - data.getSecond());
             double diffMillisDouble = pingNanos / 1_000_000.0;
@@ -86,7 +82,5 @@ public class PingReceiveListener extends PacketListenerAbstract {
             playerData.setJitter(jitter);
 
         } while (data.getFirst().longValue() != id);
-
-//        System.out.println("Finished processing - Cleared " + cleared + " entries. Queue size after: " + packetSentList.size());
     }
 }

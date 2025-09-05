@@ -1,7 +1,7 @@
 package me.caseload.knockbacksync.sender;
 
-import me.caseload.knockbacksync.FabricBase;
 import me.caseload.knockbacksync.Base;
+import me.caseload.knockbacksync.FabricBase;
 import me.caseload.knockbacksync.permission.FabricPermissionChecker;
 import net.minecraft.server.command.CommandOutput;
 import net.minecraft.server.command.ServerCommandSource;
@@ -44,14 +44,6 @@ public class FabricSenderFactory extends SenderFactory<FabricBase, ServerCommand
 
     @Override
     protected void sendMessage(ServerCommandSource sender, String message) {
-//        final Locale locale;
-//        if (sender.getEntity() instanceof ServerPlayer) {
-//            String language = ((ServerPlayer) sender.getEntity()).clientInformation().language();
-//            locale = language == null ? null : TranslationManager.parseLocale(language);
-//        } else {
-//            locale = null;
-//        }
-//        sender.sendFeedback(() -> toNativeText(TranslationManager.render(message, locale)), false);
         sender.sendFeedback(() -> Text.literal(message), false);
     }
 
@@ -67,7 +59,6 @@ public class FabricSenderFactory extends SenderFactory<FabricBase, ServerCommand
 
     @Override
     protected void performCommand(ServerCommandSource sender, String command) {
-//        sender.getServer().getCommandManager().executeWithPrefix(sender, command);
     }
 
     @Override
@@ -75,7 +66,7 @@ public class FabricSenderFactory extends SenderFactory<FabricBase, ServerCommand
         CommandOutput output = sender.output;
         return output == sender.getServer() || // Console
                 output.getClass() == RconCommandOutput.class || // Rcon
-                (output == CommandOutput.DUMMY && sender.getName().equals("")); // Functions
+                (output == CommandOutput.DUMMY && sender.getName().isEmpty()); // Functions
     }
 
     @Override
@@ -89,11 +80,6 @@ public class FabricSenderFactory extends SenderFactory<FabricBase, ServerCommand
     }
 
     @Override
-    public void close() throws Exception {
-
+    public void close() {
     }
-
-//    public static Text toNativeText(Component component) {
-//        return Text.Serialization.fromJsonTree(GsonComponentSerializer.gson().serializeToTree(component), DynamicRegistryManager.EMPTY);
-//    }
 }

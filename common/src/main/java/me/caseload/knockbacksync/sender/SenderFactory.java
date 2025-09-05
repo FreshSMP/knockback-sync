@@ -12,6 +12,7 @@ import java.util.UUID;
  * @param <T> the command sender type
  */
 public abstract class SenderFactory<P extends Base, T> implements AutoCloseable {
+
     private final P plugin;
 
     public SenderFactory(P plugin) {

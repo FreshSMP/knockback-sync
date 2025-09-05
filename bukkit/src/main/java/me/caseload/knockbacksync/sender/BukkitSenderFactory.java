@@ -13,11 +13,9 @@ import org.incendo.cloud.SenderMapper;
 import java.util.UUID;
 
 public class BukkitSenderFactory extends SenderFactory<BukkitBase, CommandSender> implements SenderMapper<CommandSender, Sender> {
-//    private final BukkitAudiences audiences;
 
     public BukkitSenderFactory(BukkitBase kbSyncBukkitBase) {
         super(kbSyncBukkitBase);
-//        this.audiences = BukkitAudiences.create(kbSyncBukkitBase.getLoader());
     }
 
     @Override
@@ -41,16 +39,6 @@ public class BukkitSenderFactory extends SenderFactory<BukkitBase, CommandSender
         sender.sendMessage(message);
     }
 
-//    @Override
-//    protected void sendMessage(CommandSender sender, Component message) {
-//        // we can safely send async for players and the console - otherwise, send it sync
-//        if (sender instanceof Player || sender instanceof ConsoleCommandSender || sender instanceof RemoteConsoleCommandSender) {
-//            this.audiences.sender(sender).sendMessage(message);
-//        } else {
-//            getPlugin().getBootstrap().getScheduler().executeSync(() -> this.audiences.sender(sender).sendMessage(message));
-//        }
-//    }
-
     @Override
     protected boolean hasPermission(CommandSender sender, String node) {
         return sender.hasPermission(node);
@@ -63,7 +51,6 @@ public class BukkitSenderFactory extends SenderFactory<BukkitBase, CommandSender
 
     @Override
     protected void performCommand(CommandSender sender, String command) {
-        //
     }
 
     @Override
@@ -82,7 +69,6 @@ public class BukkitSenderFactory extends SenderFactory<BukkitBase, CommandSender
     }
 
     @Override
-    public void close() throws Exception {
-
+    public void close() {
     }
 }
